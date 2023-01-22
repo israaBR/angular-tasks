@@ -1,0 +1,46 @@
+<div class="container my-3">
+  <input
+    type="text"
+    placeholder="Enter name"
+    class="d-block p-2 m-2 border-success col-12 w-50"
+    [value]="name_value"
+    (input)="validateNameValue($event)"
+    [(ngModel)]="name_value"
+  />
+  <p *ngIf="!isNameValid" class="text-danger px-2">
+    Name must have at least 3 characters
+  </p>
+  <p *ngIf="!name_value" class="text-danger px-2">Name is required</p>
+  <input
+    type="text"
+    placeholder="Enter age"
+    class="d-block p-2 m-2 border-success col-12 w-50"
+    [value]="age_value"
+    (input)="validateAgeValue($event)"
+    [(ngModel)]="age_value"
+  />
+  <p *ngIf="!isAgeValid" class="text-danger px-2">Age can't be under 18</p>
+  <p *ngIf="!age_value" class="text-danger px-2">Age is required</p>
+  <button
+    class="d-block p-2 m-2 btn btn-success col-12 w-50"
+    (click)="add_student()"
+  >
+    Add
+  </button>
+  <table class="table w-50 m-2 bg-dark text-light">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let std of studentsList; let i = index">
+      <tr>
+        <td>{{ i + 1 }}</td>
+        <td>{{ std.name }}</td>
+        <td>{{ std.age }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

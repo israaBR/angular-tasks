@@ -1,0 +1,32 @@
+<div class="row" my-3>
+  <div class="col-12">
+    <select
+      class="form-select w-50"
+      [value]="selectedTrack"
+      [(ngModel)]="selectedTrack"
+    >
+      <option value="">..</option>
+      <option value="frontend">Front-End Track</option>
+      <option value="mobile-native">Mobile Native Track</option>
+      <option value="security">Security Track</option>
+    </select>
+  </div>
+  <div [ngSwitch]="selectedTrack">
+    <div *ngSwitchCase="'frontend'" class="col-12 m-2">
+      <p class="fs-3 text-warning fw-bold">Front-End track is available in:</p>
+      <p>Smart Village</p>
+      <p>Alexandria</p>
+      <p>Menofia</p>
+    </div>
+    <div *ngSwitchCase="'mobile-native'" class="col-12 m-2">
+      <p class="fs-3 text-warning fw-bold">
+        Mobile Native track is available in:
+      </p>
+      <p>Luxor</p>
+      <p>Alexandria</p>
+    </div>
+    <div *ngSwitchDefault class="col-12 m-2">
+      <p class="fs-3 text-warning fw-bold">This track is not available</p>
+    </div>
+  </div>
+</div>

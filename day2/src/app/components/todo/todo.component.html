@@ -1,0 +1,19 @@
+<div class="row bg-dark my-3">
+  <h1 class="text-warning mx-4 my-2 row">Todo App</h1>
+  <div class="row mx-2 my-2">
+    <input
+      type="text"
+      class="col-8 m-1 p-2"
+      placeholder="write sommething to do .."
+      [value]="inputValue"
+      [(ngModel)]="inputValue"
+    />
+    <button class="col-3 btn btn-warning m-1" (click)="addTODO()">ADD</button>
+  </div>
+  <div *ngFor="let todo of todos; let i = index" class="row mx-2 my-2">
+    <p class="col-8 m-1 p-2 bg-light">{{ todo }}</p>
+    <button class="col-3 btn btn-danger m-1" (click)="removeTODO(i)">
+      Remove
+    </button>
+  </div>
+</div>
