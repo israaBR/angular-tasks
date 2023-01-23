@@ -16,11 +16,13 @@ export class TableComponent {
   constructor() {}
 
   validateNameValue(event: any) {
-    if (String(event.target.value).length >= 3) this.isNameValid = true;
+    if (String(event.target.value).length >= 3 && this.name_value != '')
+      this.isNameValid = true;
     else this.isNameValid = false;
   }
   validateAgeValue(event: any) {
-    if (Number(event.target.value) >= 18) this.isAgeValid = true;
+    if (Number(event.target.value) >= 18 && this.age_value != '')
+      this.isAgeValid = true;
     else this.isAgeValid = false;
   }
   add_student() {
