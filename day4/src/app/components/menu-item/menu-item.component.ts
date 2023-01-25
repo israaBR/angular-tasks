@@ -13,4 +13,6 @@ export class MenuItemComponent {
     description: '',
     price: 0,
   };
+  editItem() {}
+  deleteItem() {}
 }
